@@ -2,8 +2,22 @@ package org.iesalandalus.programacion.damas;
 
 public class Posicion {
 
-    private int fila;        // Atributo para la fila (1-8)
+    private int fila;
     private char columna;
+
+    public Posicion(int fila, char columna) {
+        if (fila < 1 || fila > 8) {
+            throw new IllegalArgumentException("ERROR: La posición no es correcta.");
+        } else {
+            setFila(fila);
+        }
+
+        if (columna < 'a' || columna > 'h') {
+            throw new IllegalArgumentException("ERROR: La La posición no es correcta.");
+        } else {
+            setColumna(columna);
+        }
+    }
 
     public int getFila() {
         return fila;
