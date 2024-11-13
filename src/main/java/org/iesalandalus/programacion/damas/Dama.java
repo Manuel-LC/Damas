@@ -6,9 +6,20 @@ public class Dama {
     private Posicion posicion;
     private boolean esDamaEspecial;
 
+    // Constructor por defecto
     public Dama() {
         this.color = Color.BLANCO;
-        this.posicion =
+        this.posicion = crearPosicionInicial(color);
+        this.esDamaEspecial = false;
+    }
+
+    // Constructor para crear una dama en una posición inicial
+    public Dama(Color color) {
+        if (color == null) {
+            throw new NullPointerException("ERROR: El color no es válido.");
+        }
+        this.color = color;
+        this.posicion = crearPosicionInicial(color);
         this.esDamaEspecial = false;
     }
 
@@ -41,5 +52,22 @@ public class Dama {
 
     public void setEsDamaEspecial(boolean esDamaEspecial) {
         this.esDamaEspecial = esDamaEspecial;
+    }
+
+    // Método para crear la posición inicial de la dama
+    private Posicion crearPosicionInicial(Color color) {
+        int fila;
+        char columna;
+
+        if (color == Color.BLANCO) {
+            fila = (int) (Math.random() * 3) + 1; // Filas 1 a 3 para dama blanca
+        } else {
+            fila = (int) (Math.random() * 3) + 6; // Filas 6 a 8 para dama negra
+        }
+
+        int numeroColumna = (int) (Math.random() * 4);
+        columna = (char) ('a' + numeroColumna * 2);
+
+        return new Posicion(fila, columna);
     }
 }
