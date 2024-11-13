@@ -5,8 +5,8 @@ public enum Direccion {
 
     private final String cadenaAMostrar;
 
-    private Direccion(String cadena) {
-        this.cadenaAMostrar = cadena;
+    private Direccion(String cadenaAMostrar) {
+        this.cadenaAMostrar = cadenaAMostrar;
     }
 
     @Override

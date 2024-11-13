@@ -5,8 +5,8 @@ public enum Color {
 
     private final String cadenaAMostrar;
 
-    private Color(String cadena) {
-        this.cadenaAMostrar = cadena;
+    private Color(String cadenaAMostrar) {
+        this.cadenaAMostrar = cadenaAMostrar;
     }
 
     @Override
