@@ -67,4 +67,10 @@ public class Posicion {
         result = 31 * result + Character.hashCode(columna);
         return result;
     }
+
+    // Método toString
+    @Override
+    public String toString() {
+        return "Posicion{" + "fila=" + fila + ", columna=" + columna + '}';
+    }
 }
