@@ -71,6 +71,6 @@ public class Posicion {
     // Método toString
     @Override
     public String toString() {
-        return "Posicion{" + "fila=" + fila + ", columna=" + columna + '}';
+        return "Posicion{fila=" + fila + ", columna=" + columna + '}';
     }
 }

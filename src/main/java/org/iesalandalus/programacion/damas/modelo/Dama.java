@@ -143,4 +143,9 @@ public class Dama {
             esDamaEspecial = true;
         }
     }
+
+    @Override
+    public String toString() {
+        return "Dama{color=" + color + ", posición=" + posicion + '}';
+    }
 }
