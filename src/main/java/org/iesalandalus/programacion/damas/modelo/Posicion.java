@@ -1,4 +1,4 @@
-package org.iesalandalus.programacion.damas;
+package org.iesalandalus.programacion.damas.modelo;
 
 public class Posicion {
 
@@ -31,7 +31,7 @@ public class Posicion {
         return fila;
     }
 
-    public void setFila(int fila)
+    private void setFila(int fila)
     {
         if (fila < 1 || fila > 8)
             throw new IllegalArgumentException("ERROR: La fila debe estar entre 1 y 8.");
@@ -43,7 +43,7 @@ public class Posicion {
         return columna;
     }
 
-    public void setColumna(char columna)
+    private void setColumna(char columna)
     {
         if (columna < 'a' || columna > 'h')
             throw new IllegalArgumentException("ERROR: La columna debe estar entre la 'a' y la 'h'.");
