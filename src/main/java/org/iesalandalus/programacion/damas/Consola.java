@@ -21,4 +21,15 @@ public class Consola {
         System.out.println("0.- Salir.");
         System.out.println("");
     }
+
+    public static int elegirOpcionMenu() {
+        int opcion;
+
+        do {
+            System.out.println("Elige una opción (0-3): ");
+            opcion = Entrada.entero();
+        }while(opcion < 0 || opcion > 3);
+
+        return opcion;
+    }
 }
