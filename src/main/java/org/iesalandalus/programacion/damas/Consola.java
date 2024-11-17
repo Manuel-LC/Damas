@@ -35,7 +35,7 @@ public class Consola {
         return opcion;
     }
 
-    public static Color elegirOpcion() {
+    public static Color elegirColor() {
         int opcionColor;
 
         do {
@@ -89,5 +89,9 @@ public class Consola {
         } while (pasos < 1);
 
         return pasos;
+    }
+
+    public static void despedirse() {
+        System.out.println("Adiós, tenga buen día.");
     }
 }
