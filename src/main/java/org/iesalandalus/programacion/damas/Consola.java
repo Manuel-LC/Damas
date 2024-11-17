@@ -1,6 +1,7 @@
 package org.iesalandalus.programacion.damas;
 
 import org.iesalandalus.programacion.damas.modelo.Color;
+import org.iesalandalus.programacion.damas.modelo.Direccion;
 import org.iesalandalus.programacion.utilidades.Entrada;
 
 public class Consola {
@@ -37,16 +38,13 @@ public class Consola {
     public static Color elegirOpcion() {
         int opcionColor;
 
+        do {
         System.out.println("Elige un color para la dama:");
         System.out.println("1. Blanco");
         System.out.println("2. Negro");
         System.out.print("Introduce tu elección (1 o 2): ");
         opcionColor = Entrada.entero();
-
-        while (opcionColor < 1 || opcionColor > 2) {
-            System.out.println("Opción no válida. Elige 1 (Blanco) o 2 (Negro).");
-            opcionColor = Entrada.entero();
-        }
+        } while (opcionColor < 1 || opcionColor > 2);
 
         if (opcionColor == 1) {
             return Color.BLANCO;
@@ -57,9 +55,28 @@ public class Consola {
 
     public static void mostrarMenuDirecciones () {
         System.out.println("Menú de direcciones disponibles:");
-        System.out.println("1. Noreste");
-        System.out.println("2. Sureste");
+        System.out.println("1. Noroeste");
+        System.out.println("2. Noreste");
         System.out.println("3. Suroeste");
-        System.out.println("4. Noroeste");
+        System.out.println("4. Sureste");
+    }
+
+    public static Direccion elegirDireccion() {
+        int opcionDirecccion;
+
+        do {
+            System.out.print("Elige una dirección (1-4): ");
+            opcionDirecccion = Entrada.entero();
+        } while (opcionDirecccion < 1 || opcionDirecccion > 4);
+
+        if (opcionDirecccion == 1) {
+            return Direccion.NOROESTE;
+        } else if (opcionDirecccion == 2) {
+            return Direccion.NORESTE;
+        } else if (opcionDirecccion == 3) {
+            return Direccion.SUROESTE;
+        } else {
+            return Direccion.SURESTE;
+        }
     }
 }
