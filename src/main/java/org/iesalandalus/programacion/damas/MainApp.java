@@ -26,4 +26,9 @@ public class MainApp {
                 break;
         }
     }
+
+    private static void crearDamaDefecto() {
+        dama = new Dama();
+        System.out.println("La dama por defecto se ha creado correctamente.");
+    }
 }
