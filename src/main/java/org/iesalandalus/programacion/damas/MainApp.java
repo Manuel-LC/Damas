@@ -31,4 +31,10 @@ public class MainApp {
         dama = new Dama();
         System.out.println("La dama por defecto se ha creado correctamente.");
     }
+
+    private static void crearDamaColor() {
+        Color color = Consola.elegirColor(); // Se pide al usuario el color
+        dama = new Dama(color); // Instanciamos la dama con el constructor correspondiente
+        System.out.println("Dama creada de color: " + color);
+    }
 }
