@@ -79,4 +79,15 @@ public class Consola {
             return Direccion.SURESTE;
         }
     }
+
+    public static int elegirPasos() {
+        int pasos;
+
+        do {
+            System.out.print("Introduce el número de casillas (mayor o igual que 1): ");
+            pasos = Entrada.entero();
+        } while (pasos < 1);
+
+        return pasos;
+    }
 }
