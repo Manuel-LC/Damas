@@ -1,5 +1,6 @@
 package org.iesalandalus.programacion.damas;
 
+import org.iesalandalus.programacion.damas.modelo.Color;
 import org.iesalandalus.programacion.utilidades.Entrada;
 
 public class Consola {
@@ -31,5 +32,26 @@ public class Consola {
         }while(opcion < 0 || opcion > 3);
 
         return opcion;
+    }
+
+    public static Color elegirOpcion() {
+        int opcionColor;
+
+        System.out.println("Elige un color para la dama:");
+        System.out.println("1. Blanco");
+        System.out.println("2. Negro");
+        System.out.print("Introduce tu elección (1 o 2): ");
+        opcionColor = Entrada.entero();
+
+        while (opcionColor < 1 || opcionColor > 2) {
+            System.out.println("Opción no válida. Elige 1 (Blanco) o 2 (Negro).");
+            opcionColor = Entrada.entero();
+        }
+
+        if (opcionColor == 1) {
+            return Color.BLANCO;
+        } else {
+            return Color.NEGRO;
+        }
     }
 }
