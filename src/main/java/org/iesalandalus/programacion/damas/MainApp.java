@@ -9,4 +9,21 @@ public class MainApp {
 
     private static Dama dama;
 
+    private static void ejecutarOpcion(int opcion) {
+        switch(opcion)
+        {
+            case 1: //Crear una dama por defecto
+                crearDamaDefecto();
+                break;
+            case 2: //Crear una dama eligiendo el color
+                crearDamaColor();
+                break;
+            case 3: //Mover la dama
+                mover();
+                break;
+            default:
+                Consola.despedirse();
+                break;
+        }
+    }
 }
