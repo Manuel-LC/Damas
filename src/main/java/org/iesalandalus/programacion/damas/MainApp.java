@@ -6,6 +6,9 @@ import org.iesalandalus.programacion.damas.modelo.Direccion;
 import org.iesalandalus.programacion.damas.modelo.Dama;
 
 public class MainApp {
+    public static void main(String[] args) {
+
+    }
 
     private static Dama dama;
 
@@ -57,6 +60,14 @@ public class MainApp {
             System.out.println("Dama movida correctamente.");
         } catch (OperationNotSupportedException e) {
             System.out.println("Error al mover la dama: " + e.getMessage());
+        }
+    }
+
+    private static void mostrarDama() {
+        if (dama == null) {
+            System.out.println("No hay ninguna dama creada.");
+        } else {
+            System.out.println("Información de la dama: " + dama);
         }
     }
 }
