@@ -37,4 +37,26 @@ public class MainApp {
         dama = new Dama(color); // Instanciamos la dama con el constructor correspondiente
         System.out.println("Dama creada de color: " + color);
     }
+
+    private static void mover() {
+        if (dama == null) {
+            System.out.println("Primero debes crear una dama antes de moverla.");
+            return;
+        }
+
+        Consola.mostrarMenuDirecciones();
+        Direccion direccion = Consola.elegirDireccion();
+        int pasos = 1;
+
+        if (dama.esDamaEspecial) { // Si es dama especial, preguntamos los pasos
+            pasos = Consola.elegirPasos();
+        }
+
+        try {
+            dama.mover(direccion, pasos); // Intentamos mover la dama
+            System.out.println("Dama movida correctamente.");
+        } catch (OperationNotSupportedException e) {
+            System.out.println("Error al mover la dama: " + e.getMessage());
+        }
+    }
 }

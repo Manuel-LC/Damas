@@ -48,14 +48,6 @@ public class Dama {
         this.posicion = posicion;
     }
 
-    public boolean getEsDamaEspecial() {
-        return esDamaEspecial;
-    }
-
-    public void setEsDamaEspecial(boolean esDamaEspecial) {
-        this.esDamaEspecial = esDamaEspecial;
-    }
-
     // Método para crear la posición inicial de la dama
     private Posicion crearPosicionInicial(Color color) {
         int fila;
