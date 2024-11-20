@@ -12,6 +12,7 @@ public class Consola {
 
     // Método que muestra el menú
     public static void mostrarMenu() {
+        System.out.println("");
         System.out.println("--------------------------------------------------------------------------------------");
         System.out.println("Programa que crea damas y simula su movimiento en el tablero");
         System.out.println("--------------------------------------------------------------------------------------");
@@ -30,6 +31,7 @@ public class Consola {
         do {
             System.out.println("Elige una opción (0-3): ");
             opcion = Entrada.entero();
+            System.out.println("");
         }while(opcion < 0 || opcion > 3);
 
         return opcion;
@@ -44,6 +46,7 @@ public class Consola {
         System.out.println("2. Negro");
         System.out.print("Introduce tu elección (1 o 2): ");
         opcionColor = Entrada.entero();
+            System.out.println("");
         } while (opcionColor < 1 || opcionColor > 2);
 
         if (opcionColor == 1) {

@@ -8,13 +8,13 @@ public class Posicion {
     // Constructor con parámetros
     public Posicion(int fila, char columna) {
         if (fila < 1 || fila > 8) {
-            throw new IllegalArgumentException("ERROR: La posición no es correcta.");
+            throw new IllegalArgumentException("ERROR: La dama se sale del tablero.");
         } else {
             setFila(fila);
         }
 
         if (columna < 'a' || columna > 'h') {
-            throw new IllegalArgumentException("ERROR: La La posición no es correcta.");
+            throw new IllegalArgumentException("ERROR: La dama se sale del tablero.");
         } else {
             setColumna(columna);
         }
@@ -71,6 +71,6 @@ public class Posicion {
     // Método toString
     @Override
     public String toString() {
-        return "Posicion{fila=" + fila + ", columna=" + columna + '}';
+        return "{fila = " + fila + ", columna = " + columna + '}';
     }
 }

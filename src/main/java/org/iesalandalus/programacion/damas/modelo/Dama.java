@@ -48,18 +48,22 @@ public class Dama {
         this.posicion = posicion;
     }
 
+    public boolean isEsDamaEspecial() {
+        return esDamaEspecial;
+    }
+
     // Método para crear la posición inicial de la dama
     private Posicion crearPosicionInicial(Color color) {
         int fila;
         char columna;
 
         if (color == Color.BLANCO) {
-            fila = (int) (Math.random() * 3) + 1; // Filas 1 a 3 para dama blanca
+            fila = (int) (Math.random() * 3) + 6; // Filas 6 a 8 para dama blanca
         } else {
-            fila = (int) (Math.random() * 3) + 6; // Filas 6 a 8 para dama negra
+            fila = (int) (Math.random() * 3) + 1; // Filas 1 a 3 para dama negra
         }
 
-        int numeroColumna = (int) (Math.random() * 4);
+        int numeroColumna = (int) (Math.random() * 4); // Columnas 'a', 'c', 'e', 'g'
         columna = (char) ('a' + numeroColumna * 2);
 
         return new Posicion(fila, columna);
@@ -82,7 +86,7 @@ public class Dama {
         // Valida el movimiento según el color y la dirección
         switch (direccion) {
             case NORESTE:
-                if (color == Color.NEGRO && esDamaEspecial) {
+                if (color == Color.NEGRO && esDamaEspecial == false) {
                     throw new OperationNotSupportedException("ERROR: La dama negra no puede moverse hacia esa posición.");
                 } else if ((nuevaFila < 1) || (nuevaFila > 8) || (nuevaColumna < 'a') || (nuevaColumna > 'h')) {
                     throw new OperationNotSupportedException("ERROR: El movimiento se sale del tablero.");
@@ -93,7 +97,7 @@ public class Dama {
 
                 break;
             case NOROESTE:
-                if (color == Color.NEGRO && esDamaEspecial) {
+                if (color == Color.NEGRO && esDamaEspecial == false) {
                     throw new OperationNotSupportedException("ERROR: La dama negra no puede moverse hacia esa posición.");
                 } else if ((nuevaFila < 1) || (nuevaFila > 8) || (nuevaColumna < 'a') || (nuevaColumna > 'h')) {
                     throw new OperationNotSupportedException("ERROR: El movimiento se sale del tablero.");
@@ -104,7 +108,7 @@ public class Dama {
 
                 break;
             case SURESTE:
-                if (color == Color.BLANCO && esDamaEspecial) {
+                if (color == Color.BLANCO && esDamaEspecial == false) {
                     throw new OperationNotSupportedException("ERROR: La dama blanca no puede moverse hacia esa posición.");
                 } else if ((nuevaFila < 1) || (nuevaFila > 8) || (nuevaColumna < 'a') || (nuevaColumna > 'h')) {
                     throw new OperationNotSupportedException("ERROR: El movimiento se sale del tablero.");
@@ -115,7 +119,7 @@ public class Dama {
 
                 break;
             case SUROESTE:
-                if (color == Color.BLANCO && esDamaEspecial) {
+                if (color == Color.BLANCO && esDamaEspecial == false) {
                     throw new OperationNotSupportedException("ERROR: La dama blanca no puede moverse hacia esa posición.");
                 } else if ((nuevaFila < 1) || (nuevaFila > 8) || (nuevaColumna < 'a') || (nuevaColumna > 'h')) {
                     throw new OperationNotSupportedException("ERROR: El movimiento se sale del tablero.");
@@ -138,6 +142,6 @@ public class Dama {
 
     @Override
     public String toString() {
-        return "Dama{color=" + color + ", posición=" + posicion + '}';
+        return "Color = " + color + ", Posición = " + posicion;
     }
 }
